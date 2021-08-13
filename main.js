@@ -22,7 +22,7 @@ app.use(function (req, res, next) {
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function(req, res){
-    res.sendFile('/home/sandro/Scrivania/Server Serra/server/index.html');
+    res.sendFile('/home/admin/ServerSerraAutomatizzata/index.html');
 });
 
 app.get('/getStatus', getPlantState.getStatus);
@@ -35,7 +35,7 @@ app.get('/getSettings', manageSettings.getSettings);
 
 app.post('/changeSettings', manageSettings.changeSettings);
 
-const port = 3000;
+const port = 4200;
 
 app.listen(port, () => {
     console.log("server listening on port " + port);

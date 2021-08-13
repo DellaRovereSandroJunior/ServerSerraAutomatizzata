@@ -7,7 +7,7 @@ module.exports = {
     }
 };
 
-const path = "/home/sandro/Scrivania/Server Serra/server/settings.json";
+const path = "/home/admin/ServerSerraAutomatizzata/settings.json";
 const settings = require(path);
 const formidable = require("formidable");
 const fs = require("fs");
