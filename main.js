@@ -42,5 +42,3 @@ const port = 4200;
 app.listen(port, () => {
     console.log("server listening on port " + port);
 });
-
-console.log("Funziona");
