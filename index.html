@@ -4,12 +4,12 @@
     <title>Accesso al server con metodo POST</title>
 </head>
 <body>
-<form action="http://localhost:3000/getStatus"
+<form action="http://93.65.109.116:4200/getStatus"
       method="GET"
 >
     <button type="submit">Stato della Serra</button>
 </form>
-<form action="http://localhost:3000/getLatestImage"
+<form action="http://93.65.109.116:4200/getLatestImage"
       method="GET"
 >
     <button type="submit">Immagine della Serra (json)</button>
@@ -17,17 +17,17 @@
 <form action="/home/sandro/Scrivania/Server Serra/server/latestImage/latest.jpg">
     <button type="submit">Visualizza la Serra</button>
 </form>
-<form action="http://localhost:3000/uploadImage" method="POST" enctype="multipart/form-data">
+<form action="http://93.65.109.116:4200/uploadImage" method="POST" enctype="multipart/form-data">
     <input type="file" name="filetoupload" value="Scegli un immagine">
     Carica un'immagine:
     <input type="submit" value="Carica">
 </form>
-<form action="http://localhost:3000/getSettings"
+<form action="http://93.65.109.116:4200/getSettings"
       method="GET"
 >
     <button type="submit">Quali sono le impostazioni attualmente in uso?</button>
 </form>
-<form action="http://localhost:3000/changeSettings"
+<form action="http://93.65.109.116:4200/changeSettings"
       method="POST"
       enctype="multipart/form-data"
 >

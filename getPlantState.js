@@ -5,6 +5,10 @@ module.exports = {
 
     getLatestImage: function (req, res) {
         getLatestImage(req, res);
+    },
+
+    getLatestImageFile: function(req, res) {
+        getLatestImageFile(req, res);
     }
 };
 
@@ -40,10 +44,22 @@ function getLatestImage (req, res) {
         if(err) throw err;
     });
     var latestImage= {
-        url: "./latestImage/latest.jpg",
+        url: "http://93.65.109.116:4200/getLatestImage/latest.jpg",
         date: date.toString()
     };
 
     res.set('Content-Type', 'application/json');
     res.end(JSON.stringify(latestImage, null, 2));
+}
+
+function getLatestImageFile(req, res) {
+    res.on('error', function () {
+        res.set('Content-Type', 'text/plain');
+        res.status(404).end('Errore nella richiesta, riprovare');
+    });
+
+    res.sendFile("home/admin/ServerSerraAutomatizzata/latestImage/latest.jpg", function(err){
+        if(err) throw err;
+        res.end();
+    });
 }

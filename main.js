@@ -29,9 +29,11 @@ app.get('/getStatus', getPlantState.getStatus);
 
 app.get('/getLatestImage', getPlantState.getLatestImage);
 
-app.post('/uploadImage', uploadImages.uploadImage);
+app.get('/getLatestImage/latest.jpg', getPlantState.getLatestImageFile);
 
 app.get('/getSettings', manageSettings.getSettings);
+
+app.post('/uploadImage', uploadImages.uploadImage);
 
 app.post('/changeSettings', manageSettings.changeSettings);
 
@@ -40,3 +42,5 @@ const port = 4200;
 app.listen(port, () => {
     console.log("server listening on port " + port);
 });
+
+console.log("Funziona");
