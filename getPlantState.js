@@ -58,7 +58,7 @@ function getLatestImageFile(req, res) {
         res.status(404).end('Errore nella richiesta, riprovare');
     });
 
-    res.sendFile("home/admin/ServerSerraAutomatizzata/latestImage/latest.jpg", function(err){
+    res.sendFile("/home/admin/ServerSerraAutomatizzata/latestImage/latest.jpg", function(err){
         if(err) throw err;
         res.end();
     });
