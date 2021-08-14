@@ -8,7 +8,6 @@ module.exports = {
 };
 
 const path = "/home/admin/ServerSerraAutomatizzata/settings.json";
-const settings = require(path);
 const formidable = require("formidable");
 const fs = require("fs");
 
@@ -19,7 +18,7 @@ function getSettings (req, res) {
     });
 
     res.set('Content-Type', 'application/json');
-    res.json(settings, function(){
+    res.sendFile(path, function(){
         res.end();
     });
 
