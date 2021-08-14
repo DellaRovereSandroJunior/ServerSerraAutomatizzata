@@ -33,6 +33,7 @@ function changeSettings(req, res) {
     });
 
     form.parse(req, function (err, field, file){
+        var nome_impostazioni = field.nome_impostazioni;
         var temperatura_min = field.temperatura_min;
         var temperatura_max = field.temperatura_max;
         var umidita_aria_min = field.umidita_aria_min;
@@ -41,6 +42,7 @@ function changeSettings(req, res) {
         var umidita_terreno_max = field.umidita_terreno_max;
         var orari_illuminazione_artificiale = field.orari_illuminazione_artificiale;
         var newSettings = {
+            "nome_impostazioni" : nome_impostazioni,
             "temperatura_min": temperatura_min,
             "rtemperatura_max": temperatura_max,
             "umidita_aria_min": umidita_aria_min,
