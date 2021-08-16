@@ -17,17 +17,17 @@ const fs = require("fs");
 function getStatus (req, res) {
     res.on('error', function () {
         res.set('Content-Type', 'text/plain');
-        res.status(404).end('Errore nella richiesta, riprovare');
+        res.status(404).end('Request error, try again');
     });
 
     var status = {
-        temperatura: "24.5",
-        umidita_terreno: "63",
-        umidita_aria: "19",
-        illuminazione_artificiale: "spenta",
-        orari_illuminazione_artificiale: "00-04",
-        livello_acqua: "75",
-        ultima_irrigazione: "18/08/2021-15:30"
+        temperature: "24.5",
+        terrain_humidity: "63",
+        air_humidity: "19",
+        artificial_lighting: "spenta",
+        artificial_lighting_schedule: "00-04",
+        water_level: "75",
+        latest_watering: "18/08/2021-15:30"
     };
 
     res.set('Content-Type', 'application/json');
@@ -37,7 +37,7 @@ function getStatus (req, res) {
 function getLatestImage (req, res) {
     res.on('error', function () {
         res.set('Content-Type', 'text/plain');
-        res.status(404).end('Errore nella richiesta, riprovare');
+        res.status(404).end('Request error, try again');
     });
 
     var date = fs.readFileSync('./latestImage/date.txt', function(err){
@@ -55,7 +55,7 @@ function getLatestImage (req, res) {
 function getLatestImageFile(req, res) {
     res.on('error', function () {
         res.set('Content-Type', 'text/plain');
-        res.status(404).end('Errore nella richiesta, riprovare');
+        res.status(404).end('Request error, try again');
     });
 
     res.sendFile("/home/admin/ServerSerraAutomatizzata/latestImage/latest.jpg", function(err){

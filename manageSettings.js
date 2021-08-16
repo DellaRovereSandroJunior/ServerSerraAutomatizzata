@@ -14,7 +14,7 @@ const fs = require("fs");
 function getSettings (req, res) {
     res.on('error', function () {
         res.set('Content-Type', 'text/plain');
-        res.status(404).end('Errore nella richiesta, riprovare');
+        res.status(404).end('Request error, try again');
     });
 
     res.set('Content-Type', 'application/json');
@@ -29,27 +29,27 @@ var form = new formidable.IncomingForm();
 function changeSettings(req, res) {
     res.on('error', function () {
         res.set('Content-Type', 'text/plain');
-        res.status(404).end('Errore nella richiesta, riprovare');
+        res.status(404).end('Request error, try again');
     });
 
     form.parse(req, function (err, field, file){
-        var nome_impostazioni = field.nome_impostazioni;
-        var temperatura_min = field.temperatura_min;
-        var temperatura_max = field.temperatura_max;
-        var umidita_aria_min = field.umidita_aria_min;
-        var umidita_aria_max = field.umidita_aria_max;
-        var umidita_terreno_min = field.umidita_terreno_max;
-        var umidita_terreno_max = field.umidita_terreno_max;
-        var orari_illuminazione_artificiale = field.orari_illuminazione_artificiale;
+        var name = field.name;
+        var min_temperature = field.min_temperature;
+        var max_temperature = field.max_temperature;
+        var min_air_temperature = field.min_air_temperature;
+        var max_air_temperature = field.max_air_temperature;
+        var min_ground_temperature = field.max_ground_temperature;
+        var max_ground_temperature = field.max_ground_temperature;
+        var artificial_lighting_schedule = field.artificial_lighting_schedule;
         var newSettings = {
-            "nome_impostazioni" : nome_impostazioni,
-            "temperatura_min": temperatura_min,
-            "rtemperatura_max": temperatura_max,
-            "umidita_aria_min": umidita_aria_min,
-            "umidita_aria_max": umidita_aria_max,
-            "umidita_terreno_min": umidita_terreno_min,
-            "umidita_terreno_max": umidita_terreno_max,
-            "orari_illuminazione_artificiale": orari_illuminazione_artificiale
+            "name" : name,
+            "min_air_temperature": min_air_temperature,
+            "max_air_temperature": max_air_temperature,
+            "min_air_humidity": min_air_humidity,
+            "max_air_humidity": max_air_humidity,
+            "min_ground_temperature": min_ground_temperature,
+            "max_ground_temperature": max_ground_temperature,
+            "artificial_lighting_schedule": artificial_lighting_schedule
         }
         fs.writeFile(path, JSON.stringify(newSettings, null, 2), { flag: 'w+' }, function(err){
             if(err) throw err;

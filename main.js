@@ -37,7 +37,7 @@ app.post('/uploadImage', uploadImages.uploadImage);
 
 app.post('/changeSettings', manageSettings.changeSettings);
 
-const port = 4200;
+const port = 3000;
 
 app.listen(port, () => {
     console.log("server listening on port " + port);

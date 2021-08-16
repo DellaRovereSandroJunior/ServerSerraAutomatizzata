@@ -12,7 +12,7 @@ var form = new formidable.IncomingForm();
 function uploadImage(req, res) {
     res.on('error', function () {
         res.set('Content-Type', 'text/plain');
-        res.status(404).end('Errore nella richiesta, riprovare');
+        res.status(404).end('Request error, try again');
     });
 
     form.parse(req, function (err, field, file) {

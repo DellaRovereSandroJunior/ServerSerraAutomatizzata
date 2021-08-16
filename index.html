@@ -4,41 +4,41 @@
     <title>Accesso al server con metodo POST</title>
 </head>
 <body>
-<form action="http://93.65.109.116:4200/getStatus"
+<form action="http://93.65.109.116:3000/getStatus"
       method="GET"
 >
     <button type="submit">Stato della Serra</button>
 </form>
-<form action="http://93.65.109.116:4200/getLatestImage"
+<form action="http://93.65.109.116:3000/getLatestImage"
       method="GET"
 >
     <button type="submit">Immagine della Serra (json)</button>
 </form>
-<form action="http://93.65.109.116:4200/getLatestImage/latest.jpg">
+<form action="http://93.65.109.116:3000/getLatestImage/latest.jpg">
     <button type="submit">Visualizza la Serra</button>
 </form>
-<form action="http://93.65.109.116:4200/uploadImage" method="POST" enctype="multipart/form-data">
+<form action="http://93.65.109.116:3000/uploadImage" method="POST" enctype="multipart/form-data">
     <input type="file" name="filetoupload" value="Scegli un immagine">
     Carica un'immagine:
     <input type="submit" value="Carica">
 </form>
-<form action="http://93.65.109.116:4200/getSettings"
+<form action="http://93.65.109.116:3000/getSettings"
       method="GET"
 >
     <button type="submit">Quali sono le impostazioni attualmente in uso?</button>
 </form>
-<form action="http://93.65.109.116:4200/changeSettings"
+<form action="http://93.65.109.116:3000/changeSettings"
       method="POST"
       enctype="multipart/form-data"
 >
-    <input type="text" name="nome_impostazioni" placeholder="Nome Impostazioni"/><br/>
-    <input type="text" name="temperatura_min" placeholder="Temperatura minima"/><br/>
-    <input type="text" name="temperatura_max" placeholder="Temperatura massima"/><br/>
-    <input type="text" name="umidita_aria_min" placeholder="Umidità minima dell'aria"/><br/>
-    <input type="text" name="umidita_aria_max" placeholder="Umidità massima dell'aria"/><br/>
-    <input type="text" name="umidita_terreno_min" placeholder="Umidità minima del terreno"/><br/>
-    <input type="text" name="umidita_terreno_max" placeholder="Umidità massima del terreno"/><br/>
-    <input type="text" name="orari_illuminazione_artificiale" placeholder="Orari dell'illuminazione artificiale"/><br/>
+    <input type="text" name="name" placeholder="Nome Impostazioni"/><br/>
+    <input type="text" name="min_air_temperature" placeholder="Temperatura minima"/><br/>
+    <input type="text" name="max_air_temperature" placeholder="Temperatura massima"/><br/>
+    <input type="text" name="min_air_humidity" placeholder="Umidità minima dell'aria"/><br/>
+    <input type="text" name="max_air_humidity" placeholder="Umidità massima dell'aria"/><br/>
+    <input type="text" name="min_ground_humidity" placeholder="Umidità minima del terreno"/><br/>
+    <input type="text" name="max_ground_humidity" placeholder="Umidità massima del terreno"/><br/>
+    <input type="text" name="artificial_lighting_schedule" placeholder="Orari dell'illuminazione artificiale"/><br/>
     <button type="submit">Invia le nuove impostazioni</button>
 </form>
 </body>
