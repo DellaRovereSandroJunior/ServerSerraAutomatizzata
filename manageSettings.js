@@ -4,10 +4,14 @@ module.exports = {
     },
     changeSettings: function(req, res){
         changeSettings(req, res)
+    },
+    getAllSettings: function (req, res) {
+        getAllSettings(req, res);
     }
 };
 
-const path = "/home/admin/ServerSerraAutomatizzata/settings.json";
+const settingsPath = "/home/admin/ServerSerraAutomatizzata/settings.json";
+const allSettingsPath = "/home/admin/ServerSerraAutomatizzata/allSettings.json";
 const formidable = require("formidable");
 const fs = require("fs");
 
@@ -18,10 +22,22 @@ function getSettings (req, res) {
     });
 
     res.set('Content-Type', 'application/json');
-    res.sendFile(path, function(){
+    res.sendFile(settingsPath, function(){
         res.end();
     });
 
+}
+
+function getAllSettings (req, res) {
+    res.on('error', function () {
+        res.set('Content-Type', 'text/plain');
+        res.status(404).end('Request error, try again');
+    });
+
+    res.set('Content-Type', 'application/json');
+    res.sendFile(allSettingsPath, function(){
+        res.end();
+    });
 }
 
 var form = new formidable.IncomingForm();
@@ -51,7 +67,7 @@ function changeSettings(req, res) {
             "max_ground_humidity": max_ground_humidity,
             "artificial_lighting_schedule": artificial_lighting_schedule
         }
-        fs.writeFile(path, JSON.stringify(newSettings, null, 2), { flag: 'w+' }, function(err){
+        fs.writeFile(settingsPath, JSON.stringify(newSettings, null, 2), { flag: 'w+' }, function(err){
             if(err) throw err;
             res.set('Content-Type', 'application/json');
 

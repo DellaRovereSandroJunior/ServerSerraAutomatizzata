@@ -32,6 +32,7 @@ app.get('/getLatestImage', getPlantState.getLatestImage);
 app.get('/getLatestImage/latest.jpg', getPlantState.getLatestImageFile);
 
 app.get('/getSettings', manageSettings.getSettings);
+app.get('/getAllSettings', manageSettings.getAllSettings);
 
 app.post('/uploadImage', uploadImages.uploadImage);
 
