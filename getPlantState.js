@@ -47,7 +47,7 @@ function getLatestImage (req, res) {
     var url = req.url + "/latest.jpg";
 
     var latestImage= {
-        url: "http://93.65.109.116:3000/getLatestImage/latest.jpg",
+        url: url,
         date: date.toString()
     };
 
