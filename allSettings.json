@@ -1,5 +1,5 @@
 {
-  "settings": {
+  "1": {
     "name": "1",
     "min_air_temperature": "2",
     "max_air_temperature": "3",
@@ -9,7 +9,7 @@
     "max_ground_humidity": "7",
     "artificial_lighting_schedule": "8"
   },
-  "settings": {
+  "9": {
     "name": "9",
     "min_air_temperature": "10",
     "max_air_temperature": "11",
@@ -19,7 +19,7 @@
     "max_ground_humidity": "15",
     "artificial_lighting_schedule": "16"
   },
-  "settings": {
+  "17": {
     "name": "17",
     "min_air_temperature": "18",
     "max_air_temperature": "19",
@@ -29,7 +29,7 @@
     "max_ground_humidity": "23",
     "artificial_lighting_schedule": "24"
   },
-  "settings": {
+  "25": {
     "name": "25",
     "min_air_temperature": "26",
     "max_air_temperature": "27",
@@ -39,7 +39,7 @@
     "max_ground_humidity": "31",
     "artificial_lighting_schedule": "32"
   },
-  "settings": {
+  "33": {
     "name": "33",
     "min_air_temperature": "34",
     "max_air_temperature": "35",
