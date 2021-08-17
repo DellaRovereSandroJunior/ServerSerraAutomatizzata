@@ -44,7 +44,7 @@ function getLatestImage (req, res) {
         if(err) throw err;
     });
 
-    var url = req.protocol + '://' + req.get('host') + req.originalUrl + "/latest.jpg";
+    var url = (req.protocol + '://' + req.get('host') + req.originalUrl).slice(0, -1) + "/latest.jpg";
 
     var latestImage= {
         url: url,
