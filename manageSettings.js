@@ -34,12 +34,12 @@ function changeSettings(req, res) {
 
     form.parse(req, function (err, field, file){
         var name = field.name;
-        var min_temperature = field.min_temperature;
-        var max_temperature = field.max_temperature;
         var min_air_temperature = field.min_air_temperature;
         var max_air_temperature = field.max_air_temperature;
-        var min_ground_temperature = field.max_ground_temperature;
-        var max_ground_temperature = field.max_ground_temperature;
+        var min_air_humidity = field.min_air_humidity;
+        var max_air_humidity = field.max_air_humidity;
+        var min_ground_humidity = field.max_ground_humidity;
+        var max_ground_humidity = field.max_ground_humidity;
         var artificial_lighting_schedule = field.artificial_lighting_schedule;
         var newSettings = {
             "name" : name,
@@ -47,8 +47,8 @@ function changeSettings(req, res) {
             "max_air_temperature": max_air_temperature,
             "min_air_humidity": min_air_humidity,
             "max_air_humidity": max_air_humidity,
-            "min_ground_temperature": min_ground_temperature,
-            "max_ground_temperature": max_ground_temperature,
+            "min_ground_humidity": min_ground_humidity,
+            "max_ground_humidity": max_ground_humidity,
             "artificial_lighting_schedule": artificial_lighting_schedule
         }
         fs.writeFile(path, JSON.stringify(newSettings, null, 2), { flag: 'w+' }, function(err){
