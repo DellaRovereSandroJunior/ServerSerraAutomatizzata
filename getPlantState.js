@@ -43,6 +43,9 @@ function getLatestImage (req, res) {
     var date = fs.readFileSync('./latestImage/date.txt', function(err){
         if(err) throw err;
     });
+
+    var url = req.url + "/latest.jpg";
+
     var latestImage= {
         url: "http://93.65.109.116:3000/getLatestImage/latest.jpg",
         date: date.toString()
