@@ -1,9 +1,10 @@
 {
-  "min_air_temperature": "1",
-  "max_air_temperature": "2",
-  "min_air_himidity": "3",
-  "max_air_humidity": "4",
-  "min_ground_humidity": "6",
-  "max_ground_humidity": "6",
-  "artificial_lighting_schedule": "7"
+  "name": "1",
+  "min_air_temperature": "2",
+  "max_air_temperature": "3",
+  "min_air_humidity": "4",
+  "max_air_humidity": "5",
+  "min_ground_humidity": "7",
+  "max_ground_humidity": "7",
+  "artificial_lighting_schedule": "8"
 }
